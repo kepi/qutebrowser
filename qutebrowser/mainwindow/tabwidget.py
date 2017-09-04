@@ -33,6 +33,8 @@ from qutebrowser.utils import qtutils, objreg, utils, usertypes, log
 from qutebrowser.config import config
 from qutebrowser.misc import objects
 
+# FIXME: only for debugging - remove before releasing
+# import ipdb
 
 PixelMetrics = usertypes.enum('PixelMetrics', ['icon_padding'],
                               start=QStyle.PM_CustomBase, is_int=True)
