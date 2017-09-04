@@ -320,8 +320,6 @@ class TabbedBrowser(tabwidget.TabWidget):
 
         cur_node = tab.node
 
-        self.print_tree_tab_structure("State before tab removing\n")
-
         node_parent   = cur_node.parent
 
         if node_parent:
@@ -596,8 +594,6 @@ class TabbedBrowser(tabwidget.TabWidget):
         self.set_page_title(idx, text)
         if idx == self.currentIndex():
             self.update_window_title()
-
-        self.print_tree_tab_structure("---- Title Changed ----\n")
 
     @pyqtSlot(browsertab.AbstractTab, QUrl)
     def on_url_changed(self, tab, url):
