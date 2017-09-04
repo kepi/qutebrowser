@@ -236,7 +236,7 @@ class TabWidget(QTabWidget):
 
             f.write("\n")
 
-    def update_tree_tab_positions(self):
+    def update_tree_tab_positions(self, caller_info):
         """Update tab positions acording tree structure"""
         for idx, node in enumerate(PreOrderIter(self.tree_root)):
             if idx > 0:
@@ -258,7 +258,7 @@ class TabWidget(QTabWidget):
         super().tabRemoved(idx)
         self._update_tab_titles()
 
-        self.update_tree_tab_positions()
+        self.update_tree_tab_positions('tabRemoved')
 
     def addTab(self, page, icon_or_text, text_or_empty=None):
         """Override addTab to use our own text setting logic.
@@ -329,7 +329,7 @@ class TabWidget(QTabWidget):
             new_node.parent = self.tree_root
 
         # positions cannot be changed before setting the title
-        self.update_tree_tab_positions()
+        self.update_tree_tab_positions('insertTab')
 
         return new_idx
 
