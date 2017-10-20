@@ -2207,6 +2207,9 @@ bindings.default:
       <Ctrl-p>: tab-pin
       q: record-macro
       "@": run-macro
+      zp: tree-tab-promote
+      zd: tree-tab-demote
+      zu: tree-tab-rotate-up
     insert:
       <Ctrl-E>: open-editor
       <Shift-Ins>: insert-text {primary}
